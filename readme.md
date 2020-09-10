@@ -27,7 +27,7 @@ yarn add @brixtol/currency-symbols
 
 ### Usage
 
-You can pass in a country code that is lowercase, uppercase or a mixture of both.
+You can pass in a currency code that is lowercase, uppercase or a mixture of both.
 
 ```javascript
 import symbol from "@brixtol/currency-symbols";
