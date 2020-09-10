@@ -2,27 +2,27 @@
 
 Currency ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)) 3 letter code mappings to Currency symbol. used by the [Brixtol Textiles](https://www.brixtoltextiles.com) internal API when dealing with currency conversion and presentation locales.
 
-Minified: 2.23 KB <br>
-Gzipped: 1.08 KB
+Minified: 1.51 KB <br>
+Gzipped: 937 B
 
 ### Install
 
 [pnpm](https://pnpm.js.org/en/cli/install)
 
 ```cli
-pnpm i @brixtol/currency-codes
+pnpm i @brixtol/currency-symbols
 ```
 
 [npm](https://www.npmjs.com/)
 
 ```cli
-npm install @brixtol/currency-codes
+npm install @brixtol/currency-symbols
 ```
 
 [Yarn](https://yarnpkg.com/)
 
 ```cli
-yarn add @brixtol/currency-codes
+yarn add @brixtol/currency-symbols
 ```
 
 ### Usage
@@ -30,7 +30,7 @@ yarn add @brixtol/currency-codes
 You can pass in a country code that is lowercase, uppercase or a mixture of both.
 
 ```javascript
-import symbol from "@brixtol/currency-codes";
+import symbol from "@brixtol/currency-symbols";
 
 // Currency code SEK (Swedish Krona) - Kr
 const SEK = symbol("SEK");

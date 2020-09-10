@@ -22,9 +22,9 @@
     "pnpm": ">=5"
   },
   "scripts": {
-    "watch": "rollup -c -w",
+    "dev": "rollup -c -w",
     "build": "rollup -c --environment prod",
-    "pack": "cd versions; pnpm pack ../ && cd ..",
+    "package": "cd versions; pnpm pack ../ && cd ..",
     "test": "ava --watch --verbose"
   },
   "ava": {
