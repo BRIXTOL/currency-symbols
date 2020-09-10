@@ -1,6 +1,6 @@
 {
   "name": "@brixtol/currency-symbols",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Mappings for currency code to currency symbol",
   "author": "Nίκος Σαβίδης <nicos@brixtoltextiles.com>",
   "license": "MIT",
@@ -15,9 +15,6 @@
   "bugs": {
     "url": "https://github.com/brixtol/currency-symbols"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "engines": {
     "pnpm": ">=5"
   },
@@ -25,7 +22,8 @@
     "dev": "rollup -c -w",
     "build": "rollup -c --environment prod",
     "package": "cd versions; pnpm pack ../ && cd ..",
-    "test": "ava --watch --verbose"
+    "test": "ava --watch --verbose",
+    "postpublish": "npm publish --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
   },
   "ava": {
     "require": [
