@@ -1,0 +1,49 @@
+{
+  "name": "@brixtol/currency-symbols",
+  "version": "0.1.0",
+  "description": "Mappings for currency code to currency symbol",
+  "author": "Nίκος Σαβίδης <nicos@brixtoltextiles.com>",
+  "license": "MIT",
+  "main": "./package/currency-symbols.cjs.js",
+  "module": "./package/currency-symbols.es.js",
+  "types": "index.d.ts",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brixtol/currency-symbols"
+  },
+  "bugs": {
+    "url": "https://github.com/brixtol/currency-symbols"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "engines": {
+    "pnpm": ">=5"
+  },
+  "scripts": {
+    "watch": "rollup -c -w",
+    "build": "rollup -c --environment prod",
+    "pack": "cd versions; pnpm pack ../ && cd ..",
+    "test": "ava --watch --verbose"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ],
+    "files": [
+      "test/*.js"
+    ],
+    "concurrency": 5
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "esm": "^3.2.25",
+    "rollup": "^2.26.11",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-terser": "^6.1.0"
+  },
+  "peerDependencies": {
+    "rollup": "^2.26.11"
+  }
+}

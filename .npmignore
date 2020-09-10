@@ -1,0 +1,10 @@
+# Dot Files
+.gitignore
+
+# Files
+rollup.config.js
+readme.md
+
+# Directories
+test
+versions
