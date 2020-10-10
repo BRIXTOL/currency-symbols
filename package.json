@@ -41,13 +41,14 @@
     "concurrency": 5
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-commonjs": "^15.1.0",
     "esm": "^3.2.25",
-    "rollup": "^2.26.11",
+    "rollup": "^2.29.0",
     "rollup-plugin-filesize": "^9.0.2",
-    "rollup-plugin-terser": "^6.1.0"
+    "rollup-plugin-terser": "^7.0.2"
   },
   "peerDependencies": {
-    "rollup": "^2.26.11"
+    "rollup": "^2.26.11",
+    "esm": "^3.2.25"
   }
 }
