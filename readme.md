@@ -2,8 +2,10 @@
 
 Currency ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)) 3 letter code mappings to Currency symbol. used by the [Brixtol Textiles](https://www.brixtoltextiles.com) internal API when dealing with currency conversion and presentation locales.
 
-Minified: 1.51 KB <br>
-Gzipped: 937 B
+### Size
+
+**Minified**: 1.51 KB <br>
+**Gzipped**: 937 B
 
 ### Install
 
@@ -43,7 +45,7 @@ const EUR = symbol("eur");
 
 ### Related
 
-Locale related mappings helpers:
+Currency Symbol placements (use with [currency.js](https://github.com/scurker/))
 
 - [@brixtol/locale-mappings](https://github.com/brixtol/locale-mappings)
 

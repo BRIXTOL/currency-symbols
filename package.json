@@ -1,6 +1,6 @@
 {
   "name": "@brixtol/currency-symbols",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Mappings for currency code to currency symbol",
   "author": "Nίκος Σαβίδης <nicos@brixtoltextiles.com>",
   "license": "MIT",
