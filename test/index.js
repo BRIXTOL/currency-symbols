@@ -1,35 +1,29 @@
-import test from 'ava'
-import currency from '../package/currency-symbols.es'
+import test from "ava";
+import { getCurrencySymbol } from "../package/index.es";
 
-test('Currency code', t => {
+test("Currency code", (t) => {
+  t.is(getCurrencySymbol("sEK"), "kr");
+  t.is(getCurrencySymbol("eur"), "€");
+  t.is(getCurrencySymbol("USD"), "$");
+  t.is(getCurrencySymbol("AuD"), "$");
 
-  t.is(currency('sEK'), 'kr')
-  t.is(currency('eur'), '€')
-  t.is(currency('USD'), '$')
-  t.is(currency('AuD'), '$')
+  t.pass();
+});
 
-  t.pass()
+test("Currency code in uppercase", (t) => {
+  t.is(getCurrencySymbol("SEK"), "kr");
+  t.is(getCurrencySymbol("EUR"), "€");
+  t.is(getCurrencySymbol("USD"), "$");
+  t.is(getCurrencySymbol("AUD"), "$");
 
-})
+  t.pass();
+});
 
-test('Currency code in uppercase', t => {
+test("Currency code in lowercase", (t) => {
+  t.is(getCurrencySymbol("sek"), "kr");
+  t.is(getCurrencySymbol("eur"), "€");
+  t.is(getCurrencySymbol("usd"), "$");
+  t.is(getCurrencySymbol("aud"), "$");
 
-  t.is(currency('SEK'), 'kr')
-  t.is(currency('EUR'), '€')
-  t.is(currency('USD'), '$')
-  t.is(currency('AUD'), '$')
-
-  t.pass()
-
-})
-
-test('Currency code in lowercase', t => {
-
-  t.is(currency('sek'), 'kr')
-  t.is(currency('eur'), '€')
-  t.is(currency('usd'), '$')
-  t.is(currency('aud'), '$')
-
-  t.pass()
-
-})
+  t.pass();
+});

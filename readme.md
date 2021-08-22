@@ -32,13 +32,13 @@ yarn add @brixtol/currency-symbols
 You can pass in a currency code that is lowercase, uppercase or a mixture of both.
 
 ```javascript
-import symbol from "@brixtol/currency-symbols";
+import { getCurrencySymbol } from "@brixtol/currency-symbols";
 
 // Currency code SEK (Swedish Krona) - Kr
-const SEK = symbol("SEK");
+const SEK = getCurrencySymbol("SEK");
 
 // Currency code EUR (Euros) - €
-const EUR = symbol("eur");
+const EUR = getCurrencySymbol("eur");
 
 // ....
 ```
@@ -47,11 +47,15 @@ const EUR = symbol("eur");
 
 Currency Symbol placements (use with [currency.js](https://github.com/scurker/))
 
-- [@brixtol/locale-mappings](https://github.com/brixtol/locale-mappings)
+- [@brixtol/currency-placements](https://github.com/brixtol/currency-placements)
 
 Country code to currency code mappings:
 
 - [@brixtol/currency-codes](https://github.com/brixtol/currency-codes)
+
+Country code to country name (English) mappings:
+
+- [@brixtol/country-names](https://github.com/brixtol/country-names)
 
 ### License
 
