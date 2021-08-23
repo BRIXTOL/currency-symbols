@@ -1,8 +1,12 @@
 {
   "name": "@brixtol/currency-symbols",
-  "version": "1.0.0",
-  "description": "Mappings for currency code to currency symbol",
-  "author": "Nίκος Σαβίδης <nicos@brixtoltextiles.com>",
+  "version": "1.1.0",
+  "description": "Mappings from 3 letter currency codes to currency symbol",
+  "author": {
+    "name": "Νίκος Σαβίδης ",
+    "email": "n@brixtol.com",
+    "url": "https://brixtoltextiles.com"
+  },
   "license": "MIT",
   "main": "./package/index.js",
   "exports": {
@@ -33,6 +37,11 @@
     "package": "cd versions; pnpm pack ../ && cd ..",
     "test": "ava --watch --verbose"
   },
+  "prettier": "@brixtol/prettier-config",
+  "eslintConfig": {
+    "ignorePatterns": "package",
+    "extends": "@brixtol/eslint-config"
+  },
   "ava": {
     "require": [
       "esm"
@@ -43,8 +52,10 @@
     "concurrency": 5
   },
   "devDependencies": {
-    "@brixtol/rollup-utils": "workspace:^0.2.0",
-    "@brixtol/tsconfig": "workspace:^1.0.0",
+    "@brixtol/eslint-config": "^1.0.1",
+    "@brixtol/prettier-config": "^1.0.3",
+    "@brixtol/rollup-utils": "^0.2.0",
+    "@brixtol/tsconfig": "^1.0.0",
     "@rollup/plugin-commonjs": "^20.0.0",
     "esm": "^3.2.25",
     "rollup": "^2.56.2",
