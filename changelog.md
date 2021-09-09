@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.1.1 - 10/09/2021
+
+Replaced development rollup dependencies to use [@brixtol/rollup-config](https://github.com/BRIXTOL/rollup-config)
+
 ### 1.1.0 - 23/08/21
 
 This version exposes the object mappings to the export so users can use them opposed to relying on the matching function. The object mapping have been annotated with JSDoc comments which inform upon the country and name of each currency. Some currencies have been removed from the mappings which are listed below in symbol updates.
@@ -29,9 +33,9 @@ First major version, ships with a **breaking change**. The default export is no 
 #### Named export
 
 ```js
-import { getCurrencySymbol } from "@brixtol/currency-symbols";
+import { getCurrencySymbol } from '@brixtol/currency-symbols';
 
-const currency = getCurrencySymbol("SE"); // kr
+const currency = getCurrencySymbol('SE'); // kr
 ```
 
 #### Breakdown

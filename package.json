@@ -1,6 +1,6 @@
 {
   "name": "@brixtol/currency-symbols",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Mappings from 3 letter currency codes to currency symbol",
   "author": {
     "name": "Νίκος Σαβίδης ",
@@ -54,14 +54,9 @@
   "devDependencies": {
     "@brixtol/eslint-config": "^1.0.1",
     "@brixtol/prettier-config": "^1.0.3",
-    "@brixtol/rollup-utils": "^0.2.0",
+    "@brixtol/rollup-config": "workspace:^1.2.0",
     "@brixtol/tsconfig": "^1.0.0",
-    "@rollup/plugin-commonjs": "^20.0.0",
     "esm": "^3.2.25",
-    "rollup": "^2.56.2",
-    "rollup-plugin-filesize": "^9.1.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.3.5"
   }
 }

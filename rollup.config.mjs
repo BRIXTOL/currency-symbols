@@ -1,12 +1,7 @@
-import { config, env } from '@brixtol/rollup-utils';
-import { defineConfig as Rollup } from 'rollup';
-import { terser } from 'rollup-plugin-terser';
-import commonjs from '@rollup/plugin-commonjs';
-import filesize from 'rollup-plugin-filesize';
-import ts from 'rollup-plugin-typescript2';
+import { config, env, rollup, plugin } from '@brixtol/rollup-config';
 import typescript from 'typescript';
 
-export default Rollup(
+export default rollup(
   {
     input: 'src/index.ts',
     output: [
@@ -26,13 +21,13 @@ export default Rollup(
     ],
     plugins: env.if('dev')(
       [
-        ts({ useTsconfigDeclarationDir: true, typescript }),
-        commonjs()
+        plugin.ts({ useTsconfigDeclarationDir: true, typescript }),
+        plugin.commonjs()
       ]
     )(
       [
-        terser({ ecma: 2016, compress: { passes: 5 } }),
-        filesize()
+        plugin.terser({ ecma: 2016, compress: { passes: 5 } }),
+        plugin.filesize()
       ]
     )
   }
