@@ -1,0 +1,63 @@
+{
+  "name": "@brixtol/currency-symbols",
+  "version": "1.2.1",
+  "description": "Mappings from 3 letter currency codes to currency symbol",
+  "author": {
+    "name": "Νίκος Σαβίδης ",
+    "email": "n@brixtol.com",
+    "url": "https://brixtoltextiles.com"
+  },
+  "license": "MIT",
+  "main": "./package/index.js",
+  "exports": {
+    "require": "./package/index.js",
+    "import": "./package/index.es.js"
+  },
+  "types": "./package/index.d.ts",
+  "keywords": [
+    "currency",
+    "mappings",
+    "country",
+    "3166-1 alpha-2",
+    "ISO 4217"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brixtol/currency-symbols"
+  },
+  "bugs": {
+    "url": "https://github.com/brixtol/currency-symbols"
+  },
+  "engines": {
+    "pnpm": ">=5"
+  },
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c --environment prod",
+    "package": "cd versions; pnpm pack ../ && cd ..",
+    "test": "ava --watch --verbose",
+    "test:build": "ava --verbose"
+  },
+  "prettier": "@brixtol/prettier-config",
+  "eslintConfig": {
+    "ignorePatterns": "package",
+    "extends": "@brixtol/eslint-config"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ],
+    "files": [
+      "test/*.js"
+    ],
+    "concurrency": 5
+  },
+  "devDependencies": {
+    "@brixtol/eslint-config": "^1.0.1",
+    "@brixtol/prettier-config": "workspace:^1.2.0",
+    "@brixtol/rollup-config": "workspace:^1.4.0",
+    "@brixtol/tsconfig": "^1.0.0",
+    "esm": "^3.2.25",
+    "typescript": "^4.3.5"
+  }
+}
