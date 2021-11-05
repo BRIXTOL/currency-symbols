@@ -1,0 +1,7 @@
+{
+  "extends": "@brixtol/tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "package"
+  }
+}

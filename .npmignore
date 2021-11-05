@@ -1,0 +1,12 @@
+# DOT FILES
+.gitignore
+
+# FILES
+tsconfig.json
+rollup.config.js
+readme.md
+
+# DIRECTORIES
+test
+versions
+src
