@@ -1,3 +1,6 @@
+import { CurrencyCodes } from '@brixtol/currency-codes';
+import { LiteralUnion, AnyCase } from '@brixtol/tsutils';
+
 interface ICurrencySymbols {
   /** United Arab Emirates (UAE Dirham) */
   AED: 'د.إ';
@@ -518,29 +521,16 @@ const CurrencySymbols: ICurrencySymbols = Object.freeze({
 });
 
 /**
- * Literal Union Helper
- *
- * Allows string types to be passed while respecting
- * intellisense completions.
- */
-type Union<T, B extends | null | undefined | string | symbol> = T | (B & {_?: never})
-
-/**
- * Object Values
- *
- * Creates a union of currency code values used as a return
- * type in function export.
- */
-type Values<T, V extends keyof T = keyof T> = T[V];
-
-/**
  * Currency Symbol
  *
  * Extracts the Symbol string from the ICurrencySymbol interface
  * which is use as the Return type reference
  */
-type Currency<ISO extends keyof ICurrencySymbols> = Values<ICurrencySymbols, ISO>
-
+export type CurrencySymbol<ISO> = (
+  ISO extends CurrencyCodes
+  ? ICurrencySymbols[ISO]
+  : never
+)
 /**
  * Get Currency Symbol
  *
@@ -550,9 +540,9 @@ type Currency<ISO extends keyof ICurrencySymbols> = Values<ICurrencySymbols, ISO
  * > _Accepts either uppercase, lowercase or
  * or a combination of either_
  */
-function getCurrencySymbol <ISO extends keyof ICurrencySymbols> (
-  code: Union<ISO, string>
-): Currency<ISO> {
+function getCurrencySymbol <ISO extends AnyCase<CurrencyCodes>> (
+  code: LiteralUnion<ISO>
+): CurrencySymbol<ISO> {
 
   const symbol = CurrencySymbols[code.toUpperCase()];
 
@@ -562,4 +552,4 @@ function getCurrencySymbol <ISO extends keyof ICurrencySymbols> (
 
 }
 
-export { ICurrencySymbols, CurrencySymbols, getCurrencySymbol };
+export { ICurrencySymbols, CurrencySymbols, getCurrencySymbol, CurrencyCodes };
