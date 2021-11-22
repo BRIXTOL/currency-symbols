@@ -1,7 +1,7 @@
 import { CurrencyCodes } from '@brixtol/currency-codes';
 import { LiteralUnion, AnyCase } from '@brixtol/tsutils';
 
-interface ICurrencySymbols {
+export interface ICurrencySymbols {
   /** United Arab Emirates (UAE Dirham) */
   AED: 'د.إ';
   /** Antigua And Barbuda (East Caribbean Dollar) */
@@ -346,7 +346,7 @@ interface ICurrencySymbols {
   ZWL: 'Z$';
 }
 
-const CurrencySymbols: ICurrencySymbols = Object.freeze({
+export const CurrencySymbols: ICurrencySymbols = Object.freeze({
   AED: 'د.إ',
   AFN: '؋',
   ALL: 'L',
@@ -540,7 +540,7 @@ export type CurrencySymbol<ISO> = (
  * > _Accepts either uppercase, lowercase or
  * or a combination of either_
  */
-function getCurrencySymbol <ISO extends AnyCase<CurrencyCodes>> (
+export function getCurrencySymbol <ISO extends AnyCase<CurrencyCodes>> (
   code: LiteralUnion<ISO>
 ): CurrencySymbol<ISO> {
 
@@ -551,5 +551,3 @@ function getCurrencySymbol <ISO extends AnyCase<CurrencyCodes>> (
   return symbol;
 
 }
-
-export { ICurrencySymbols, CurrencySymbols, getCurrencySymbol, CurrencyCodes };
