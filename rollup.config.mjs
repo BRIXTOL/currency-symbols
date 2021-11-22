@@ -1,5 +1,4 @@
-import { config, env, rollup, plugin } from '@brixtol/rollup-config';
-import typescript from 'typescript';
+import { env, rollup, plugin } from '@brixtol/rollup-config';
 
 export default rollup(
   {
@@ -7,13 +6,13 @@ export default rollup(
     output: [
       {
         format: 'cjs',
-        file: config.output.cjs,
+        file: 'package/index.js',
         exports: 'named',
         sourcemap: env.is('dev', 'inline')
       },
       {
-        format: 'esm',
-        file: config.output.esm,
+        format: 'es',
+        file: 'package/index.es.js',
         exports: 'named',
         sourcemap: env.is('dev', 'inline'),
         preferConst: true
@@ -21,12 +20,11 @@ export default rollup(
     ],
     plugins: env.if('dev')(
       [
-        plugin.ts2({ useTsconfigDeclarationDir: true, typescript }),
-        plugin.commonjs()
+        plugin.ts()
       ]
     )(
       [
-        plugin.terser({ ecma: 2016, compress: { passes: 5 } }),
+        plugin.esminify(),
         plugin.filesize()
       ]
     )
