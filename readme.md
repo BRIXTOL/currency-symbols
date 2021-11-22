@@ -4,8 +4,8 @@ Currency ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)) 3 let
 
 ### Size
 
-**Minified**: 1.52 KB <br>
-**Gzipped**: 976 B
+**Minified**: 1.63 KB <br>
+**Gzipped**: 1.03 KB
 
 ### Install
 
@@ -32,22 +32,25 @@ yarn add @brixtol/currency-symbols
 You can pass in a currency code that is lowercase, uppercase or a mixture of both.
 
 ```javascript
-import { getCurrencySymbol } from "@brixtol/currency-symbols";
+import { getCurrencySymbol } from '@brixtol/currency-symbols';
 
 // Currency code SEK (Krona)
-const sek = getCurrencySymbol("SEK"); // Kr
+const sek = getCurrencySymbol('SEK'); // Kr
 
 // Currency code EUR (Euros)
-const eur = getCurrencySymbol("eur"); // €
+const eur = getCurrencySymbol('eur'); // €
 
 // Currency code USD (Dollar)
-const usd = getCurrencySymbol("uSd"); // $
+const usd = getCurrencySymbol('uSd'); // $
 ```
 
 The module also exposes the raw mappings and interface on the export. The mappings object is provided **read only** using [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze). The raw mappings are annotated with JSDoc comments so when using an editor that supports intellisense (ie: vscode) you will receive the country and currency name in completions and hovers.
 
 ```javascript
-import { CurrencySymbols, ICurrencySymbols } from "@brixtol/currency-symbols";
+import {
+  CurrencySymbols,
+  ICurrencySymbols
+} from '@brixtol/currency-symbols';
 
 // Mapping Object
 
@@ -76,6 +79,10 @@ The module supports 4 crypto currency mappings. Only cryptos that have alt-codes
 - XBT (Bitcoin)
 
 ### Related
+
+Static GeoIP utility
+
+- [@brixtol/i18n](https://github.com/brixtol/i18n)
 
 Country code to currency code mappings:
 
